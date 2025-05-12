@@ -30,9 +30,6 @@ To run the project locally:
 - **Backend (optional):** Node.js, Express.js
 - **Database (optional):** MongoDB atlas
 
-## 📂 Project Structure
-
-
 ## 🚀 Getting Started
 
 
