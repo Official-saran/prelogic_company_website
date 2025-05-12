@@ -1,0 +1,304 @@
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #2f0541bc;
+    color: #ffffffce;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ec70eec8;
+    border-radius: 10px;
+    box-shadow: 0px 20px 40px rgba(214, 79, 228, 0.51);
+    
+}
+
+h1 {
+    font-size: 2.5rem;
+    position: relative;
+    font-weight: 700;
+    color: #e7dede;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 4px 4px;
+    width: 100%;
+    background-color: #050707;
+    border-radius: 10px;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#service-period,
+#service-amount {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #000000;
+}
+
+#service-period-value,
+#service-amount-value {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Form Styles */
+#service-form {
+    margin-top: 30px;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    width: 92%;
+    padding: 13px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    border: 1px solid #ad64b0;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #00bfff;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.btn-primary {
+    width: 40%;
+    padding: 12px;
+    background-color: #000000;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+    display: block;
+    margin: 0 auto; /* Centers horizontally */
+    
+}
+
+.btn-primary:hover {
+    background-color: #1173b4a8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .form-control {
+        padding: 8px;
+    }
+
+    .btn-primary {
+        padding: 10px;
+    }
+}
+
+
+/***header***/
+/* General Styles */
+
+
+/* Navbar Styling */
+.navbar-container {
+    background-color: #000000;
+    padding: 10px 0;
+}
+
+.navbar-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.custom-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.brand-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #f0f0f0;
+    text-decoration: none;
+}
+
+.brand-highlight {
+    color: #ff17f7;
+}
+
+.navbar-toggler {
+    border: none;
+    background: none;
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-item {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #faf8f8;
+    transition: color 0.3s ease;
+}
+
+.navbar-item:hover,
+.navbar-item-active {
+    color: #de07ff;
+}
+
+.dropdown-wrapper {
+    position: relative;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffebeb;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #d339f99d;
+    border-radius: 5px;
+    padding: 10px 0;
+    min-width: 150px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 8px 15px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #10081f24;
+}
+
+.dropdown-wrapper:hover .dropdown-menu {
+    display: block;
+}
+
+/* Contact Section */
+.contact-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-icon {
+    position: relative;
+    color: #c245db;
+    font-size: 1.5rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #000000;
+    padding-right: 10px;
+}
+
+.contact-info span {
+    font-size: 0.9rem;
+    color: #ffffffc7;
+}
+
+.contact-info .phone-number {
+    color: #d410e2;
+    font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+    /* Navbar adjustments */
+    .custom-navbar {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .brand-logo {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .navbar-menu {
+        flex-direction: column;
+        width: 100%;
+    }
+    .navbar-item {
+        display: block;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+    .contact-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .contact-info {
+        font-size: 14px;
+    }
+
+    /* Service details form adjustments */
+    .container {
+        padding: 15px;
+    }
+    #service-form {
+        width: 100%;
+        padding: 15px;
+    }
+    .form-control {
+        font-size: 14px;
+        padding: 8px;
+    }
+    .btn {
+        width: 100%;
+    }
+}
