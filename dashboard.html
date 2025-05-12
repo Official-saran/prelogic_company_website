@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to the Dashboard</h1>
+    <p>You are now signed in.</p>
+
+    <script>
+        const token = localStorage.getItem('token');
+        if (!token) {
+            window.location.href = 'signin.html'; // Redirect to sign-in if no token
+        }
+
+        // Fetch user-specific data or perform other actions
+        fetch('http://localhost:5000/user/data', {
+            headers: { 'Authorization': token },
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                // Display user data on the page
+            })
+            .catch(err => console.error(err));
+    </script>
+</body>
+</html>

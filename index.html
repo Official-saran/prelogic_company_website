@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>PreLogic</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+
+        <!-- --------- FAVICON ---------- -->
+        <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <script>
+            // Check if the user is signed in
+            const token = localStorage.getItem('token');
+            const role = localStorage.getItem('role');
+        
+            if (!token) {
+              // Redirect to login if not signed in
+              window.location.href = 'login.html';
+            } else if (role === 'admin') {
+              // Redirect admin to admin dashboard
+              window.location.href = 'admin-dashboard.html';
+            }
+          </script>
+        <!-- Spinner Start -->
+        <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" role="status"></div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar Start -->
+        <div class="container-fluid bg-primary">
+            <div class="container">
+                <nav class="navbar navbar-dark navbar-expand-lg py-0">
+                    <!-- Left: Menu Toggle Button (Mobile View) -->
+                    <button type="button" class="navbar-toggler d-lg-none" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+        
+                    <!-- Center: Logo -->
+                    <a href="index.html" class="navbar-brand mx-auto">
+                        <h1 class="text-white fw-bold d-block text-center">PRE<span class="text-secondary">Logic</span></h1>
+                    </a>
+        
+                    <!-- Right: User Icons Toggle (Mobile View) -->
+                    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#iconMenu">
+                        <i class="fa fa-user-circle text-white fa-lg"></i>
+                    </button>
+        
+                    <!-- Main Navbar -->
+                    <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
+                        <div class="navbar-nav me-auto mx-xl-auto p-0">
+                            <a href="index.html" class="nav-item nav-link active text-secondary">Home</a>
+                            <a href="about.html" class="nav-item nav-link">About</a>
+                            <a href="project.html" class="nav-item nav-link">Projects</a>
+                            <div class="nav-item dropdown">
+                                <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                                <div class="dropdown-menu rounded">
+                                    <a href="service.html" class="dropdown-item">IT Services</a>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        </div>
+                    </div>
+        
+                    <!-- Right Corner Icons (Desktop View) -->
+                    <div class="d-none d-lg-flex align-items-center ms-auto">
+                        <a href="signin.html" class="nav-item nav-link text-white">
+                            <i class="fa fa-sign-in-alt fa-lg"></i> Login
+                        </a>
+                        <a href="signup.html" class="nav-item nav-link text-white ms-3">
+                            <i class="fa fa-user-plus fa-lg"></i> Signup
+                        </a>
+                        <a href="profile.html" class="nav-item nav-link text-white ms-3">
+                            <i class="fa fa-user-circle fa-lg"></i> Profile
+                        </a>
+                        <!-- Phone Icon -->
+                        <div id="phone-tada" class="d-flex align-items-center justify-content-center ms-4">
+                            <a href="#" class="position-relative animated tada infinite">
+                                <i class="fa fa-phone-alt text-white fa-2x"></i>
+                                <div class="position-absolute" style="top: -7px; left: 20px;">
+                                    <span><i class="fa fa-comment-dots text-secondary"></i></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+        
+                    <!-- Icons in Mobile View (Collapsed) -->
+                    <div class="collapse d-lg-none mt-2" id="iconMenu">
+                        <div class="bg-dark p-3 rounded">
+                            <a href="signin.html" class="d-block text-white py-2"><i class="fa fa-sign-in-alt"></i> Login</a>
+                            <a href="signup.html" class="d-block text-white py-2"><i class="fa fa-user-plus"></i> Signup</a>
+                            <a href="profile.html" class="d-block text-white py-2"><i class="fa fa-user-circle"></i> Profile</a>
+                                
+                            
+                        </div>
+                    </div>
+        
+                </nav>
+            </div>
+        </div>
+        
+        <!-- Navbar End --> 
+
+
+        <!-- Carousel Start -->
+        <div class="container-fluid px-0">
+            <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
+                    <li data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="Second slide"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="img/carousel-33.jpg" class="img-fluid" alt="First slide">
+                        <div class="carousel-caption">
+                            <div class="container carousel-content">
+                                <h6 class="text-secondary h4 animated fadeInUp">Best IT Solutions</h6>
+                                <h1 class="text-white display-1 mb-4 animated fadeInRight">Welcome to PRE LOGIC TECH SERVICES – Redefining IT Solutions</h1>
+                                <p class="mb-4 text-white fs-5 animated fadeInDown">Empowering industries with cutting-edge technology tailored to your unique needs. From cybersecurity to cloud management, we deliver innovative IT services to transform your business operations.</p>
+                                <a href="project.html" class="me-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft">Read More</button></a>
+                                <a href="contact.html" class="ms-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn2 animated fadeInRight">Contact Us</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <!-- Carousel End -->
+
+
+
+
+
+        <!-- About Start -->
+        <div class="container-fluid py-5 my-5">
+            <div class="container pt-5">
+                <div class="row g-5">
+                    <div class="col-lg-5 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
+                        <div class="h-100 position-relative">
+                            <img src="img/about-222.jpg" class="img-fluid w-75 rounded" alt="" style="margin-top: -8%;">                           
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
+                        <h1 class="text-primary">About Us</h1>
+                        <h1 class="mb-4">About HighTech Agency And It's Innovative IT Solutions</h1>
+                        <p>At PRE LOGIC TECH SERVICES we empower businesses through reliable and forward-thinking IT solutions, ensuring growth, security, and innovation at every step.</p>
+                        <h5 class="text-primary">Why Choose Us:</h5>
+                        <p class="mb-4">• Years of industry expertise<br>
+                            • Dedicated, certified IT professionals<br>
+                            • Proven track record of success across healthcare, finance, education, government, and manufacturing sectors.
+                            </p>
+                        <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">More </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+
+        <!-- Services Start -->
+        <div class="container-fluid services py-5 mb-5">
+            <div class="container">
+                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
+                    <h1 class="text-primary">Our IT Services</h1>
+                    <h1>Services Built Specifically For Your Business</h1>
+                </div>
+                <div class="row g-5 services-inner">
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+                        <div class="services-item bg-light">
+                            <div class="p-4 text-center services-content">
+                                <div class="services-content-icon">    
+                                    <i class="ri-building-2-line"></i>
+                                    <h4 class="mb-3">IT Consulting</h4>
+                                    <p class="mb-4">Streamline your operations with expert guidance on:</p>
+                                    <p class="mb-4">🌟Network assessment and design<br>
+                                        🌟Cloud migration and management<br>
+                                        🌟Cybersecurity and compliance
+                                        </p>	
+                                    	
+                                    <a href="IT_service.html" class="btn bttn-secondary text-white px-5 py-2 rounded-pill">Explore services</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+                        <div class="services-item bg-light">
+                            <div class="p-4 text-center services-content">
+                                <div class="services-content-icon">
+                                    <i class="ri-id-card-line"></i>
+                                    <h4 class="mb-3">Managed Services</h4>
+                                    <p class="mb-4">Round-the-clock support for all your IT needs, including:</p>
+                                    <p class="mb-4">🌟Monitoring and maintenance<br>
+                                        🌟Help desk support<br>
+                                        🌟IT project management
+                                        </p>
+                                    <a href="manage_service.html" class="btn bttn-secondary text-white px-5 py-2 rounded-pill">Explore services</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
+                        <div class="services-item bg-light">
+                            <div class="p-4 text-center services-content">
+                                <div class="services-content-icon">
+                                    <i class="ri-folder-shield-2-fill"></i>
+                                    <h4 class="mb-3">Cybersecurity</h4>
+                                    <p class="mb-4">Protect your digital assets with:</p>
+                                    <p class="mb-4">🌟Threat detection and response<br>
+                                        🌟Vulnerability assessment and penetration testing<br>
+                                        	🌟Incident response and disaster recovery
+                                        </p>
+                                    <a href="cybersecurity.html" class="btn bttn-secondary text-white px-5 py-2 rounded-pill">Explore services</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+                        <div class="services-item bg-light">
+                            <div class="p-4 text-center services-content">
+                                <div class="services-content-icon">
+                                    <i class="ri-folder-cloud-fill"></i>
+                                    <h4 class="mb-3">Cloud Services</h4>
+                                    <p class="mb-4">Unlock the potential of cloud computing through:</p>
+                                    <p class="mb-4">🌟Seamless migration and deployment<br>
+                                        🌟Cloud security and compliance<br>
+                                        🌟Cost-effective management and optimization
+                                        </p>
+                                        <a href="cloud.html" class="btn bttn-secondary text-white px-5 py-2 rounded-pill">Explore services</a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+                        <div class="services-item bg-light">
+                            <div class="p-4 text-center services-content">
+                                <div class="services-content-icon">
+                                    <i class="ri-line-chart-line"></i>
+                                    <i class="ri-pie-chart-box-line"></i>
+                                    <h4 class="mb-3">Data Analytics</h4>
+                                    <p class="mb-4">Turn data into actionable insights: </p>
+                                    <p class="mb-4">🌟Business intelligence and reporting<br>
+                                        🌟Advanced data visualization<br>
+                                        🌟Predictive analytics and machine learning
+                                        🌟 Real-time data processing and analytics
+                                        </p>
+                                        <a href="data_service.html" class="btn bttn-secondary text-white px-5 py-2 rounded-pill">Explore services</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
+                        <div class="services-item bg-light">
+                            <div class="p-4 text-center services-content">
+                                <div class="services-content-icon">
+                                    <i class="ri-code-s-slash-line"></i>
+                                    <h4 class="mb-3">Programming</h4>
+                                    <p class="mb-4">Transform ideas into functional solutions:</p>
+                                    <p class="mb-4">🌟 Custom software development<br>
+                                        🌟 API integration and automation<br>
+                                        🌟 Code optimization and debugging<br>
+                                        🌟 Cross-platform application development</p>
+                                    <a href="IT_service.html" class="btn bttn-secondary text-white px-5 py-2 rounded-pill">Explore services</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Services End -->
+
+
+        <!-- Services Start -->
+    <!--<div class="container-fluid services py-5 mb-5">
+            <div class="container">
+                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
+                    <h1 class="text-primary">Our Solar Services</h1>
+                    <h1>Harness the Power of the Sun – Sustainable, Efficient, Reliable!</h1>
+                </div>
+                <div class="row g-5 services-inner">
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+                        <div class="services-item bg-light">
+                            <div class="p-4 text-center services-content">
+                                <div class="services-content-icon">    
+                                    <i class="ri-home-4-fill"></i>
+                                    <h4 class="mb-3">Residential Solar</h4>
+                                    <p class="mb-4">Cut your energy costs with tailored solar systems designed to fit your home and budget:</p>
+                                    <p class="mb-4">🌟Save on energy bills with custom-designed solar systems.<br>
+                                        🌟Financing options to fit every homeowner's budget.<br>
+                                        </p>	
+                                    	
+                                    <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>-->
+                            <!--</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+                        <div class="services-item bg-light">
+                            <div class="p-4 text-center services-content">
+                                <div class="services-content-icon">
+                                    <i class="ri-building-line"></i>
+                                    <h4 class="mb-3">Commercial Solar</h4>
+                                    <p class="mb-4">Boost business efficiency with cost-saving, energy-smart solar solutions:</p>
+                                    <p class="mb-4">🌟Reduce operating costs with energy-efficient systems.<br>	    
+                                        🌟Proven success stories for businesses of all sizes.
+                                        </p>
+                                    <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>-->
+                            <!--    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
+                        <div class="services-item bg-light">
+                            <div class="p-4 text-center services-content">
+                                <div class="services-content-icon">
+                                    <i class="ri-building-3-line"></i>
+                                    <h4 class="mb-3">Industrial Solar</h4>
+                                    <p class="mb-4">Empower your operations with reliable and scalable solar energy systems:</p>
+                                    <p class="mb-4">🌟Reliable energy for industrial facilities.<br>
+                                        🌟Integration with energy storage solutions.<br>
+                                        </p>
+                                    <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>*/-->
+                            <!--    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+                        <div class="services-item bg-light">
+                            <div class="p-4 text-center services-content">
+                                <div class="services-content-icon">
+                                    <i class="ri-home-gear-line"></i>
+                                    <h4 class="mb-3">Solar Panel Maintenance</h4>
+                                    <p class="mb-4">Extend your system’s lifespan with expert maintenance and care:</p>
+                                    <p class="mb-4">🌟Keep your system in top shape with regular cleaning and inspections.<br>
+                                        
+                                        🌟Expert repairs and replacements to ensure maximum efficiency.
+                                        </p>
+                                    <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>-->
+                            <!--    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!-- Services End -->
+
+         <!-- serve Start -->
+        <div class="container-fluid project py-5 mb-5">
+            <div class="container">
+                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
+                    <h5 class="text-primary">Industries We Serve</h5>
+                    <h1>Tailored IT solutions for:</h1>
+                </div>
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+                        <div class="project-item">
+                            <div class="project-img">
+                                <img src="img/project-11.jpg" class="img-fluid w-100 rounded" alt="">
+                                <div class="project-content">
+                                    <a href="" class="text-center">
+                                        <h4 class="text-secondary">🌟Healthcare</h4>
+                                        <p class="m-0 text-white">Telehealth Platforms</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+                        <div class="project-item">
+                            <div class="project-img">
+                                <img src="img/project-22.jpg" class="img-fluid w-100 rounded" alt="">
+                                <div class="project-content">
+                                    <a href="" class="text-center">
+                                        <h4 class="text-secondary">🌟Finance</h4>
+                                        <p class="m-0 text-white">Blockchain Technology</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
+                        <div class="project-item">
+                            <div class="project-img">
+                                <img src="img/project-33.jpg" class="img-fluid w-100 rounded" alt="">
+                                <div class="project-content">
+                                    <a href="" class="text-center">
+                                        <h4 class="text-secondary">🌟Education</h4>
+                                        <p class="m-0 text-white">Learning Management Systemse</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+                        <div class="project-item">
+                            <div class="project-img">
+                                <img src="img/project-44.jpg" class="img-fluid w-100 rounded" alt="">
+                                <div class="project-content">
+                                    <a href="#" class="text-center">
+                                        <h4 class="text-secondary">🌟Web Development</h4>
+                                        <p class="m-0 text-white">Web Analysis</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+                        <div class="project-item">
+                            <div class="project-img">
+                                <img src="img/project-55.jpg" class="img-fluid w-100 rounded" alt="">
+                                <div class="project-content">
+                                    <a href="" class="text-center">
+                                        <h4 class="text-secondary">🌟Digital Marketing</h4>
+                                        <p class="m-0 text-white">Marketing Analysis</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
+                        <div class="project-item">
+                            <div class="project-img">
+                                <img src="img/project-66.jpg" class="img-fluid w-100 rounded" alt="">
+                                <div class="project-content">
+                                    <a href="" class="text-center">
+                                        <h4 class="text-secondary">🌟Manufacturing</h4>
+                                        <p class="m-0 text-white">IoT-Based Supply<br>Chain Management</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- serve End -->
+
+
+
+        <!-- case study Start -->
+        <!-- <div class="container-fluid py-5 my-5">
+            <div class="container pt-5">
+                <div class="row g-5">
+                    <div class="col-lg-5 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
+                        <div class="h-100 position-relative">
+                            <img src="img/about-22.jpg" class="img-fluid w-75 rounded" alt="" style="margin-bottom: 25%;">
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
+                        <h5 class="text-primary">Case Studies</h5>
+                        <h1 class="mb-4">Discover our success stories:</h1>
+                        <h5 class="text-primary">-- ---🌟--- --</h5>
+                        <p class="mb-4">• Real-world challenges and solutions
+                            <br>• Measurable results from our services
+                            <br>• Client testimonials and reviews</p>                               -->
+                        <!-- <a href="service.html" class="btn btn-secondary rounded-pill px-5 py-3 text-white">More Details</a> -->
+                    <!-- </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- case study End -->
+
+
+        <!-- Testimonial Start -->
+        <div class="container-fluid testimonial py-5 mb-5">
+            <div class="container">
+                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
+                    <h5 class="text-primary">Our Testimonial</h5>
+                    <h1>Our Client Saying!</h1>
+                </div>
+                <div class="owl-carousel testimonial-carousel wow fadeIn" data-wow-delay=".5s">
+                    <div class="testimonial-item border p-4">
+                        <div class="d-flex align-items-center">
+                            <div class="">
+                                <img src="img/testimonial-1.jpg" alt="">
+                            </div>
+                            <div class="ms-4">
+                                <h4 class="text-secondary">Unknown</h4>
+                                <p class="m-0 pb-3">Profession</p>
+                                <div class="d-flex pe-5">
+                                    <i class="fas fa-star me-1 text-primary"></i>
+                                    <i class="fas fa-star me-1 text-primary"></i>
+                                    <i class="fas fa-star me-1 text-primary"></i>
+                                    <i class="fas fa-star me-1 text-primary"></i>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-top mt-4 pt-3">
+                            <p class="mb-0">We recently migrated our entire infrastructure to a cloud-based solution provided by CloudWave, and the results have been phenomenal! The transition was seamless, thanks to their dedicated support team. We've seen a significant reduction in operational costs and improved collaboration among our remote teams.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-item border p-4">
+                        <div class=" d-flex align-items-center">
+                            <div class="">
+                                <img src="img/testimonial-1.jpg" alt="">
+                            </div>
+                            <div class="ms-4">
+                                <h4 class="text-secondary">Unknown</h4>
+                                <p class="m-0 pb-3">Profession</p>
+                                <div class="d-flex pe-5">
+                                    <i class="fas fa-star me-1 text-primary"></i>
+                                    <i class="fas fa-star me-1 text-primary"></i>
+                                    <i class="fas fa-star me-1 text-primary"></i>
+                                    <i class="fas fa-star me-1 text-primary"></i>
+                                    <i class="fas fa-star me-1 text-primary"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-top mt-4 pt-3">
+                            <p class="mb-0">Implementing ServiceNow for our IT service management has transformed how we handle support requests. The automation of ticketing and workflow processes has drastically reduced response times and improved team efficiency.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-item border p-4">
+                        <div class=" d-flex align-items-center">
+                            <div class="">
+                                <img src="img/testimonial-1.jpg" alt="">
+                            </div>
+                            <div class="ms-4">
+                                <h4 class="text-secondary">Unknown</h4>
+                                <p class="m-0 pb-3">Profession</p>
+                                <div class="d-flex pe-5">
+                                    <i class="fas fa-star me-1 text-primary"></i>
+                                    <i class="fas fa-star me-1 text-primary"></i>
+                                    <i class="fas fa-star me-1 text-primary"></i>
+                                    <i class="fas fa-star me-1 text-primary"></i>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-top mt-4 pt-3">
+                            <p class="mb-0">After experiencing a minor data breach last year, we decided to implement CyberShield’s cybersecurity solutions. Their comprehensive approach to threat detection and response has given us peace of mind. The dashboard is user-friendly, allowing us to monitor our security status in real-time.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-item border p-4">
+                        <div class=" d-flex align-items-center">
+                            <div class="">
+                                <img src="img/testimonial-1.jpg" alt="">
+                            </div>
+                            <div class="ms-4">
+                                <h4 class="text-secondary">Unknown</h4>
+                                <p class="m-0 pb-3">Profession</p>
+                                <div class="d-flex pe-5">
+                                    <i class="fas fa-star me-1 text-primary"></i>
+                                    <i class="fas fa-star me-1 text-primary"></i>
+                                    <i class="fas fa-star me-1 text-primary"></i>
+                                    <i class="fas fa-star me-1 text-primary"></i>
+                                    <i class="fas fa-star me-1 text-primary"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-top mt-4 pt-3">
+                            <p class="mb-0">We engaged with DataSmart to implement AI-driven analytics for our marketing campaigns. While the initial results were promising, we faced challenges integrating the system with our existing tools.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonial End -->
+
+
+    
+        <!-- Contact Start -->
+        <div class="container-fluid py-5 mb-5">
+            <div class="container">
+                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
+                    <h5 class="text-primary">Get In Touch</h5>
+                    <h1 class="mb-3">Contact for any query</h1>
+                </div>
+                <div class="contact-detail position-relative p-5">
+                    <div class="row g-5 mb-5 justify-content-center">
+                        <div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".3s">
+                            <div class="d-flex bg-light p-3 rounded">
+                                <div class="flex-shrink-0 btn-square bg-secondary rounded-circle" style="width: 64px; height: 64px;">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h4 class="text-primary">Address</h4>
+                                    <a href="https://goo.gl/maps/Zd4BCynmTb98ivUJ6" target="_blank" class="h5">Plot No.11, Galaxy Park, Bagalur road, Hosur-635109</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".5s">
+                            <div class="d-flex bg-light p-3 rounded">
+                                <div class="flex-shrink-0 btn-square bg-secondary rounded-circle" style="width: 64px; height: 64px;">
+                                    <i class="fa fa-phone text-white"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h4 class="text-primary">Call Us</h4>
+                                    <a class="h5" href="tel:+0123456789" target="_blank">+91 9344646485
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".7s">
+                            <div class="d-flex bg-light p-3 rounded">
+                                <div class="flex-shrink-0 btn-square bg-secondary rounded-circle" style="width: 64px; height: 64px;">
+                                    <i class="fa fa-envelope text-white"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h4 class="text-primary">Email Us</h4>
+                                    <a class="h5" href="mailto:info@example.com" target="_blank">Info@prelogic.in 
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-5">
+                        <div class="col-lg-6 wow fadeIn" data-wow-delay=".3s">
+                            <div class="p-5 h-100 rounded contact-map">
+                                <!--<iframe class="rounded w-100 h-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.4710403339755!2d-73.82241512404069!3d40.685622471397615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c26749046ee14f%3A0xea672968476d962c!2s123rd%20St%2C%20Queens%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1686493221834!5m2!1sen!2sbd" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
+                            </div>
+                        </div>
+                        <div class="col-lg-6 wow fadeIn" data-wow-delay=".5s">
+                            <div class="p-5 rounded contact-form">
+                                <div class="mb-4">
+                                    <input type="text" class="form-control border-0 py-3" placeholder="Your Name">
+                                </div>
+                                <div class="mb-4">
+                                    <input type="email" class="form-control border-0 py-3" placeholder="Your Email">
+                                </div>
+                                <div class="mb-4">
+                                    <input type="text" class="form-control border-0 py-3" placeholder="Project">
+                                </div>
+                                <div class="mb-4">
+                                    <textarea class="w-100 form-control border-0 py-3" rows="6" cols="10" placeholder="Message"></textarea>
+                                </div>
+                                <div class="text-start">
+                                    <button class="btn bg-primary text-white py-3 px-5" type="button">Send Message</button>
+                                    <p class="contact__message" id="contactMessage">...</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <!-- Contact End -->
+
+
+        <!-- Footer Start -->
+         <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
+            <div class="container pt-5 pb-4">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <a href="index.html" class="navbar-brand">
+                            <h1 class="text-white fw-bold d-block">PRE<span class="text-secondary">Logic</span> </h1>
+                        </a>
+                        <p class="mt-4 text-light">Ready to experience transformative IT services.</p>
+                        <div class="d-flex hightech-link">
+                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-facebook-f text-primary"></i></a>
+                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-twitter text-primary"></i></a>
+                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-instagram text-primary"></i></a>
+                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a href="#" class="h3 text-secondary">Short Link</a>
+                        <div class="mt-4 d-flex flex-column short-link">
+                            <a href="index.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Home</a>
+                            <a href="about.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>About us</a>
+                            <a href="contact.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Contact us</a>
+                            <a href="service.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Our Services</a>
+                            <a href="project.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Our Projects</a>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a href="#" class="h3 text-secondary">Help Link</a>
+                        <div class="mt-4 d-flex flex-column help-link">
+                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Terms Of use</a>
+                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Privacy Policy</a>
+                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Helps</a>
+                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>FQAs</a>
+                            <a href="contact.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Contact</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a href="#" class="h3 text-secondary">Contact Us</a>
+                        <div class="text-white mt-4 d-flex flex-column contact-link">
+                            <a href="https://maps.app.goo.gl/BcqwYsbXG99LcdJ97" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i>Plot No.11, Galaxy Park, Bagalur road, Hosur-635109</a>
+                            <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-secondary me-2"></i>  contact: +91 9344646485
+                            </a>
+                            <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-envelope text-secondary me-2"></i>info@prelogic.in </a>
+                        </div>
+                    </div>
+                </div>
+                <hr class="text-light mt-5 mb-4">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start">
+                        <span class="text-light"><a href="#" class="text-secondary"><i class="fas fa-copyright text-secondary me-2"></i> 2025 PreLogic Tech Services LLP</a>, All right reserved.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        <span class="text-light">Designed By<a href="https://github.com/Official-saran" class="text-secondary"> Saran ⓢ</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-secondary btn-square rounded-circle back-to-top"><i class="fa fa-arrow-up text-white"></i></a>
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>PreLogic</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+        <!-- --------- FAVICON ---------- -->
+        <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Spinner Start -->
+        <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" role="status"></div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar Start -->
+        <div class="container-fluid bg-primary">
+            <div class="container">
+                <nav class="navbar navbar-dark navbar-expand-lg py-0">
+                    <!-- Left: Menu Toggle Button (Mobile View) -->
+                    <button type="button" class="navbar-toggler d-lg-none" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+        
+                    <!-- Center: Logo -->
+                    <a href="index.html" class="navbar-brand mx-auto">
+                        <h1 class="text-white fw-bold d-block text-center">PRE<span class="text-secondary">Logic</span></h1>
+                    </a>
+        
+                    <!-- Right: User Icons Toggle (Mobile View) -->
+                    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#iconMenu">
+                        <i class="fa fa-user-circle text-white fa-lg"></i>
+                    </button>
+        
+                    <!-- Main Navbar -->
+                    <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
+                        <div class="navbar-nav me-auto mx-xl-auto p-0">
+                            <a href="index.html" class="nav-item nav-link active text-secondary">Home</a>
+                            <a href="about.html" class="nav-item nav-link">About</a>
+                            <a href="project.html" class="nav-item nav-link">Projects</a>
+                            <div class="nav-item dropdown">
+                                <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                                <div class="dropdown-menu rounded">
+                                    <a href="service.html" class="dropdown-item">IT Services</a>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        </div>
+                    </div>
+        
+                    <!-- Right Corner Icons (Desktop View) -->
+                    <div class="d-none d-lg-flex align-items-center ms-auto">
+                        <a href="signin.html" class="nav-item nav-link text-white">
+                            <i class="fa fa-sign-in-alt fa-lg"></i> Login
+                        </a>
+                        <a href="signup.html" class="nav-item nav-link text-white ms-3">
+                            <i class="fa fa-user-plus fa-lg"></i> Signup
+                        </a>
+                        <a href="profile.html" class="nav-item nav-link text-white ms-3">
+                            <i class="fa fa-user-circle fa-lg"></i> Profile
+                        </a>
+                        <!-- Phone Icon -->
+                        <div id="phone-tada" class="d-flex align-items-center justify-content-center ms-4">
+                            <a href="#" class="position-relative animated tada infinite">
+                                <i class="fa fa-phone-alt text-white fa-2x"></i>
+                                <div class="position-absolute" style="top: -7px; left: 20px;">
+                                    <span><i class="fa fa-comment-dots text-secondary"></i></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+        
+                    <!-- Icons in Mobile View (Collapsed) -->
+                    <div class="collapse d-lg-none mt-2" id="iconMenu">
+                        <div class="bg-dark p-3 rounded">
+                            <a href="signin.html" class="d-block text-white py-2"><i class="fa fa-sign-in-alt"></i> Login</a>
+                            <a href="signup.html" class="d-block text-white py-2"><i class="fa fa-user-plus"></i> Signup</a>
+                            <a href="profile.html" class="d-block text-white py-2"><i class="fa fa-user-circle"></i> Profile</a>
+                                
+                            
+                        </div>
+                    </div>
+        
+                </nav>
+            </div>
+        </div>
+        
+        <!-- Navbar End --> 
+
+        <div class="container-fluid services-section py-5 mb-5">
+            <div class="container">
+                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
+                    <h5 class="text-primary">Our Expertise</h5>
+                    <h1>Comprehensive Network Solutions</h1>
+                </div>
+                <div class="row g-5">
+                    <!-- Network Service 1 -->
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+                        <div class="service-card">
+                            <div class="service-image">
+                                <img src="img/IT-1.jpg" class="img-fluid w-100 rounded-top" alt="Network Infrastructure">
+                            </div>
+                            <div class="service-content">
+                                <h4 class="service-title">Network Infrastructure</h4>
+                                <p class="service-description">Evaluation & Optimization</p>
+                                <p class="service-description">Focus: Performance & Scalability</p>
+                                <div class="service-buttons">
+                                    <button class="btn-service" onclick="location.href='service-page.html?title=Network Infrastructure&description=Evaluation-Optimization&period=1 Month&amount=500';">Get Service</button>
+                                    <button class="btn-contact" onclick="location.href='contact.html';">Contact Us</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Network Service 2 -->
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+                        <div class="service-card">
+                            <div class="service-image">
+                                <img src="img/IT-2.jpg" class="img-fluid w-100 rounded-top" alt="Performance Optimization">
+                            </div>
+                            <div class="service-content">
+                                <h4 class="service-title">Performance Optimization</h4>
+                                <p class="service-description">Troubleshooting & Analysis</p>
+                                <p class="service-description">Focus: Speed & Reliability</p>
+                                <div class="service-buttons">
+                                    <button class="btn-service" onclick="location.href='service-page.html?title=Performance Optimization&description=Troubleshooting & Analysis&period=6 Month&amount=300';">Get Service</button>
+                                    <button class="btn-contact" onclick="location.href='contact.html';">Contact Us</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Network Service 3 -->
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
+                        <div class="service-card">
+                            <div class="service-image">
+                                <img src="img/IT-3.jpg" class="img-fluid w-100 rounded-top" alt="Network Security">
+                            </div>
+                            <div class="service-content">
+                                <h4 class="service-title">Network Security</h4>
+                                <p class="service-description">Risk Assessment & Analysis</p>
+                                <p class="service-description">Focus: Threat Mitigation</p>
+                                <div class="service-buttons">
+                                    <button class="btn-service" onclick="location.href='service-page.html?title=Network Security&description=Risk Assessment & Analysis&period=1 Month&amount=200';">Get Service</button>
+                                    <button class="btn-contact" onclick="location.href='contact.html';">Contact Us</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Network Service 4 -->
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+                        <div class="service-card">
+                            <div class="service-image">
+                                <img src="img/IT-4.jpg" class="img-fluid w-100 rounded-top" alt="Scalable Architecture">
+                            </div>
+                            <div class="service-content">
+                                <h4 class="service-title">Scalable Architecture</h4>
+                                <p class="service-description">Design & Implementation</p>
+                                <p class="service-description">Focus: Growth & Flexibility</p>
+                                <div class="service-buttons">
+                                    <button class="btn-service" onclick="location.href='service-page.html?title=Scalable Architecture&description=Design & Implementation&period=1 week&amount=200';">Get Service</button>
+                                    <button class="btn-contact" onclick="location.href='contact.html';">Contact Us</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Network Service 5 -->
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+                        <div class="service-card">
+                            <div class="service-image">
+                                <img src="img/IT-5.jpg" class="img-fluid w-100 rounded-top" alt="Wireless Networks">
+                            </div>
+                            <div class="service-content">
+                                <h4 class="service-title">Wireless Networks</h4>
+                                <p class="service-description">Setup & Optimization</p>
+                                <p class="service-description">Focus: Coverage & Speed</p>
+                                <div class="service-buttons">
+                                    <button class="btn-service" onclick="location.href='service-page.html?title=Wireless Networks&description=Setup & Optimization&period=1 year&amount=1000';">Get Service</button>
+                                    <button class="btn-contact" onclick="location.href='contact.html';">Contact Us</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Network Service 6 -->
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
+                        <div class="service-card">
+                            <div class="service-image">
+                                <img src="img/IT-6.jpg" class="img-fluid w-100 rounded-top" alt="VPN & Remote Access">
+                            </div>
+                            <div class="service-content">
+                                <h4 class="service-title">VPN & Remote Access</h4>
+                                <p class="service-description">Secure Solutions</p>
+                                <p class="service-description">Focus: Privacy & Security</p>
+                                <div class="service-buttons">
+                                    <button class="btn-service" onclick="location.href='service-page.html?title=VPN - Remote Access&description=Secure Solutions&period=1 year&amount=800';">Get Service</button>
+                                    <button class="btn-contact" onclick="location.href='contact.html';">Contact Us</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <!-- Footer Start -->
+        <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
+            <div class="container pt-5 pb-4">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <a href="index.html" class="navbar-brand">
+                            <h1 class="text-white fw-bold d-block">PRE<span class="text-secondary">Logic</span> </h1>
+                        </a>
+                        <p class="mt-4 text-light">Ready to experience transformative IT services.</p>
+                        <div class="d-flex hightech-link">
+                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-facebook-f text-primary"></i></a>
+                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-twitter text-primary"></i></a>
+                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-instagram text-primary"></i></a>
+                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a href="#" class="h3 text-secondary">Short Link</a>
+                        <div class="mt-4 d-flex flex-column short-link">
+                            <a href="index.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Home</a>
+                            <a href="about.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>About us</a>
+                            <a href="contact.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Contact us</a>
+                            <a href="service.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Our Services</a>
+                            <a href="project.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Our Projects</a>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a href="#" class="h3 text-secondary">Help Link</a>
+                        <div class="mt-4 d-flex flex-column help-link">
+                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Terms Of use</a>
+                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Privacy Policy</a>
+                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Helps</a>
+                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>FQAs</a>
+                            <a href="contact.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Contact</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a href="#" class="h3 text-secondary">Contact Us</a>
+                        <div class="text-white mt-4 d-flex flex-column contact-link">
+                            <a href="https://maps.app.goo.gl/BcqwYsbXG99LcdJ97" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i>Plot No.11, Galaxy Park, Bagalur road, Hosur-635109</a>
+                            <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-secondary me-2"></i>  contact: +91 9344646485
+                            </a>
+                            <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-envelope text-secondary me-2"></i>info@prelogic.in </a>
+                        </div>
+                    </div>
+                </div>
+                <hr class="text-light mt-5 mb-4">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start">
+                        <span class="text-light"><a href="#" class="text-secondary"><i class="fas fa-copyright text-secondary me-2"></i> 2025 PreLogic Tech Services LLP</a>, All right reserved.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        <span class="text-light">Designed By<a href="https://github.com/Official-saran" class="text-secondary"> Saran ⓢ</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-secondary btn-square rounded-circle back-to-top"><i class="fa fa-arrow-up text-white"></i></a>
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+
+</html>
