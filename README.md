@@ -8,7 +8,7 @@ Welcome to the official repository for the **Prelogic Tech Pvt Ltd** company web
 To run the project locally:
 
 1. Clone the repository:
-   git clone https://github.com/yourusername/prelogic-website.git
+   git clone https://github.com/Official-saran/prelogic_company_website.git
 
 
 [Visit the Website](https://prelogic.in) 
